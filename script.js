@@ -13,4 +13,8 @@ function playNote(key) {
     noteAudio.play()
     // animation to know which key is pressed
     key.classList.add('active')
+    // remove active class when note is done playing (audio is finish playing)
+    noteAudio.addEventListener('ended', () =>  
+    key.classList.remove('active')
+    )
 }
