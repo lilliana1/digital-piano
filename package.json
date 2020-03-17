@@ -1,0 +1,28 @@
+{
+  "name": "digital-piano",
+  "version": "1.0.0",
+  "description": "## Introduction Simple piano that can be played using the mouse or keyboard.",
+  "main": "script.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lilliana1/digital-piano.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lilliana1/digital-piano/issues"
+  },
+  "homepage": "https://github.com/lilliana1/digital-piano#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
