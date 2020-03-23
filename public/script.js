@@ -36,7 +36,7 @@ document.addEventListener('keydown', e => {
 // function of btn to change when is press and calling function to actually record 
 function toggleRecording() {
     recordButton.classList.toggle('active')
-    if (isRecording() {
+    if (isRecording()) {
         startRecording()
     } else {
         stopRecording()
