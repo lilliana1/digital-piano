@@ -2,6 +2,11 @@
 const WHITE_KEYS = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];
 const BLACK_KEYS = ['s', 'd', 'g', 'h', 'j'];
 
+let recordingStartTime;
+let songNotes;
+
+// calling btn to record
+const recordButton = document.querySelector('.record-button');
 
 // calling all keys
 const keys = document.querySelectorAll('.key')
@@ -11,6 +16,10 @@ const blackKeys = document.querySelectorAll('.key.black')
 keys.forEach(key => {
     key.addEventListener('click', () => playNote(key))
 })
+
+// listening when record btn is press
+recordButton.addEventListener('click', toggleRecording)
+
 
 // allow to play audio when computer keyboard is press
 document.addEventListener('keydown', e => {
@@ -23,6 +32,36 @@ document.addEventListener('keydown', e => {
     if (whiteKeyIndex > -1) playNote(whiteKeys[whiteKeyIndex]);
     if (blackKeyIndex > -1) playNote(blackKeys[blackKeyIndex]);
 })
+
+// function of btn to change when is press and calling function to actually record 
+function toggleRecording() {
+    recordButton.classList.toggle('active')
+    if (isRecording() {
+        startRecording()
+    } else {
+        stopRecording()
+    }
+}
+
+// if record btn exits and is active, we will start recording
+function isRecording() {
+    return recordButton != null && recordButton.classList.contains('active')
+}
+
+// actually start recording
+function startRecording() {
+    recordingStartTime = Date.now()
+    songNotes = []
+}
+
+function stopRecording(){
+    playSong()
+}
+
+function playSong() {
+    console.log(songNotes);
+    
+}
 
 function playNote(key) {
     // calling all mp3 files
