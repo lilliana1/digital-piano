@@ -64,6 +64,8 @@ function playSong() {
 }
 
 function playNote(key) {
+    // if we are in the process of recording, we want to record our notes
+    if (isRecording()) recordNote(key.dataset.note)
     // calling all mp3 files
     const noteAudio = document.getElementById(key.dataset.note)
     // plays key as you press
@@ -75,4 +77,13 @@ function playNote(key) {
     noteAudio.addEventListener('ended', () =>  
     key.classList.remove('active')
     )
+}
+
+// recording the notes 
+function recordNote(note) {
+    // pushing new object into array
+    songNotes.push({
+        key: note,
+        startTime: Date.now() - recordingStartTime
+    })
 }
