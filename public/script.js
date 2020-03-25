@@ -13,6 +13,12 @@ const keys = document.querySelectorAll('.key')
 const whiteKeys = document.querySelectorAll('.key.white')
 const blackKeys = document.querySelectorAll('.key.black')
 
+// conversion of notes, it will return new object 
+const keyMap = keys.reduce((map, key) => {
+    map[key.dataset.note] = key
+    return map
+}), {})
+
 keys.forEach(key => {
     key.addEventListener('click', () => playNote(key))
 })
@@ -57,10 +63,14 @@ function startRecording() {
 function stopRecording(){
     playSong()
 }
-
+// check if we have any song notes 
 function playSong() {
-    console.log(songNotes);
-    
+    if (songNotes.length === 0) return
+    songNotes.forEach(note => {
+        setTimeout(() => {
+            playNote()
+        }, note.startTime)
+    })    
 }
 
 function playNote(key) {
