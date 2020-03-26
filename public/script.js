@@ -73,7 +73,7 @@ function playSong() {
     if (songNotes.length === 0) return
     songNotes.forEach(note => {
         setTimeout(() => {
-            playNote(keyMap[note.key])
+            playNote(keyMap[note])
         }, note.startTime)
     })    
 }
