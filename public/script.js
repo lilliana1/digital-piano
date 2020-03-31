@@ -8,6 +8,7 @@ const recordButton = document.querySelector('.record-button');
 const playButton = document.querySelector('.play-button');
 const saveButton = document.querySelector('.save-button');
 
+
 // calling all keys
 const keys = document.querySelectorAll('.key')
 const whiteKeys = document.querySelectorAll('.key.white')
@@ -31,13 +32,20 @@ keys.forEach(key => {
     key.addEventListener('click', () => playNote(key))
 })
 
-// listening when record btn is press, it will record
-recordButton.addEventListener('click', toggleRecording)
-// listening when record btn is press, it will save song
-saveButton.addEventListener('click', saveSong)
-// listening when play btn is press, it will play song
-playButton.addEventListener('click', playSong)
+if (recordButton) {
+    // listening when record btn is press, it will record
+    recordButton.addEventListener('click', toggleRecording)
+}
 
+if(saveButton) {
+    // listening when record btn is press, it will save song
+    saveButton.addEventListener('click', saveSong)
+}
+
+if (playButton) {
+    // listening when play btn is press, it will play song
+    playButton.addEventListener('click', playSong)
+}
 
 // allow to play audio when computer keyboard is press
 document.addEventListener('keydown', e => {
@@ -105,9 +113,9 @@ function playNote(key) {
     // animation to know which key is pressed
     key.classList.add('active')
     // remove active class when note is done playing (audio is finish playing)
-    noteAudio.addEventListener('ended', () =>  
-    key.classList.remove('active')
-    )
+    noteAudio.addEventListener('ended', () =>  {
+        key.classList.remove('active') 
+    })
 }
 
 // recording the notes 
@@ -117,4 +125,9 @@ function recordNote(note) {
         key: note,
         startTime: Date.now() - recordingStartTime
     })
+}
+
+// saving the song
+function saveSong() {
+
 }
