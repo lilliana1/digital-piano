@@ -18,7 +18,23 @@ app.get('/', (req, res) => {
 })
 
 app.post('/songs', (req, res) => {
-    req.body.songNotes
+    const song = new Song({
+        notes: req.body.songNotes
+    })
+
+    song.save()
+
+    res.json(song)
+})
+// access song by id
+app.get('/songs/:id', async (req, res) => {
+    let song
+    try {
+      song = await Song.findById(req.params.id)
+    } catch (e) {
+        song = undefined
+    }
+    res.render('index', { song: song })
 })
 
 app.listen(5000)
