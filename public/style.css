@@ -101,3 +101,12 @@ body {
 	}
 }
 
+.play-button,
+.save-button {
+    display: none;
+}
+
+.play-button.show,
+.save-button.show {
+    display: block;
+}

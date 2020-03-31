@@ -5,6 +5,9 @@ const BLACK_KEYS = ['s', 'd', 'g', 'h', 'j'];
 // calling btn to record
 const recordButton = document.querySelector('.record-button');
 
+const playButton = document.querySelector('.play-button');
+const saveButton = document.querySelector('.save-button');
+
 // calling all keys
 const keys = document.querySelectorAll('.key')
 const whiteKeys = document.querySelectorAll('.key.white')
@@ -63,10 +66,19 @@ function isRecording() {
 function startRecording() {
     recordingStartTime = Date.now()
     songNotes = []
+        // this will hide play button
+        playButton.classList.remove('show')
+        // this will hide save button
+        saveButton.classList.remove('show')
 }
 
 function stopRecording(){
     playSong()
+    // this will show play button
+    playButton.classList.add('show')
+    // this will show save button
+    saveButton.classList.add('show')
+
 }
 // check if we have any song notes 
 function playSong() {
