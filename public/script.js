@@ -31,8 +31,12 @@ keys.forEach(key => {
     key.addEventListener('click', () => playNote(key))
 })
 
-// listening when record btn is press
+// listening when record btn is press, it will record
 recordButton.addEventListener('click', toggleRecording)
+// listening when record btn is press, it will save song
+saveButton.addEventListener('click', saveSong)
+// listening when play btn is press, it will play song
+playButton.addEventListener('click', playSong)
 
 
 // allow to play audio when computer keyboard is press
