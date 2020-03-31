@@ -1,7 +1,7 @@
 {
   "name": "digital-piano",
   "version": "1.0.0",
-  "description": "## Introduction Simple piano that can be played using the mouse or keyboard.",
+  "description": "Introduction Simple piano that can be played using the mouse or keyboard.",
   "main": "script.js",
   "scripts": {
     "devStart": "nodemon server.js"
