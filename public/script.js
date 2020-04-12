@@ -129,5 +129,8 @@ function recordNote(note) {
 
 // saving the song async function
 function saveSong() {
-    axios.post('/songs', { songNotes: songNotes })
+    axios.post('/songs', { songNotes: songNotes }).then(res 
+        => {
+            console.log(res.data._id)
+        })
 }
