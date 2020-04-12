@@ -18,14 +18,10 @@ const keyMap = [...keys].reduce((map, key) => {
     return map
 }, {})
 
-
-let recordingStartTime;
-let songNotes;
-
-
+let recordingStartTime
+let songNotes = currentSong && currentSong.notes
 
 // 
-
 keys.forEach(key => {
     key.addEventListener('click', () => playNote(key))
 })
@@ -39,11 +35,9 @@ if(saveButton) {
     // listening when record btn is press, it will save song
     saveButton.addEventListener('click', saveSong)
 }
+// listening when play btn is press, it will play song
+playButton.addEventListener('click', playSong)
 
-if (playButton) {
-    // listening when play btn is press, it will play song
-    playButton.addEventListener('click', playSong)
-}
 
 // allow to play audio when computer keyboard is press
 document.addEventListener('keydown', e => {
@@ -95,7 +89,7 @@ function playSong() {
     if (songNotes.length === 0) return
     songNotes.forEach(note => {
         setTimeout(() => {
-            playNote(keyMap[note])
+            playNote(keyMap[note.key])
         }, note.startTime)
     })    
 }
@@ -127,8 +121,8 @@ function recordNote(note) {
 
 // saving the song async function
 function saveSong() {
-    axios.post('/songs', { songNotes: songNotes }).then(res 
-        => {
-            console.log(res.data._id)
-        })
+    axios.post('/songs', { songNotes: songNotes }).then(res => {
+        songLink.classList.add('show')
+        songLink.href = `/songs/${res.data._id}`
+    })
 }
