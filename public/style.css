@@ -44,19 +44,16 @@ body {
     background-color: #333;
 }
 
-.buttons {
+.buttons,
+.song-link {
     /* background-color: transparent; */
     margin-bottom: 2rem;
     display: flex;
 }
 
 .btn {
-/* --hue: 100;
---saturation: 100%; */
-
     padding: .5rem 1rem;
     border: none;
-    /* background-color: hsl(var(--hue), var(--saturation), 50%); */
     font-size: 2rem;
     margin-left: 1rem;
     color: inherit;
@@ -102,11 +99,13 @@ body {
 }
 
 .play-button,
-.save-button {
+.save-button,
+.song-link {
     display: none;
 }
 
 .play-button.show,
-.save-button.show {
+.save-button.show,
+.song-link {
     display: block;
 }
