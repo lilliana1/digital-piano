@@ -30,7 +30,7 @@ app.post('/songs', (req, res) => {
 app.get('/songs/:id', async (req, res) => {
     let song
     try {
-      song = await Song.findById(req.params.id)
+        song = await Song.findById(req.params.id)
     } catch (e) {
         song = undefined
     }
