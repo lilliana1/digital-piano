@@ -1,14 +1,12 @@
 // keyboard keys
-const WHITE_KEYS = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];
-const BLACK_KEYS = ['s', 'd', 'g', 'h', 'j'];
+const WHITE_KEYS = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
+const BLACK_KEYS = ['s', 'd', 'g', 'h', 'j']
 
 // calling btn to record
-const recordButton = document.querySelector('.record-button');
-
-const playButton = document.querySelector('.play-button');
-const saveButton = document.querySelector('.save-button');
-
-
+const recordButton = document.querySelector('.record-button')
+const playButton = document.querySelector('.play-button')
+const saveButton = document.querySelector('.save-button')
+const songLink = document.querySelector('.song-link')
 // calling all keys
 const keys = document.querySelectorAll('.key')
 const whiteKeys = document.querySelectorAll('.key.white')
