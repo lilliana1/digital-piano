@@ -127,7 +127,7 @@ function recordNote(note) {
     })
 }
 
-// saving the song
+// saving the song async function
 function saveSong() {
-
+    axios.post('/songs', { songNotes: songNotes })
 }
